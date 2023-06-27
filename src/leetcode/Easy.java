@@ -10,10 +10,22 @@ public class Easy {
 
     public static void main(String[] args) {
         Easy function = new Easy();
+        /**
+         * 两数之和
+         * */
+        //int[] nums = new int[]{3,2,4};
+        //System.out.println(Arrays.toString(function.twoSum(nums,6)));
 
-//        int[] nums = new int[]{3,2,4};
-//        System.out.println(Arrays.toString(function.twoSum(nums,6)));
-        System.out.println(function.isPalindrome(120021));
+        /**
+         * 回文数
+         * */
+        //System.out.println(function.isPalindrome(120021));
+
+        /**
+         * 罗马数字转整数
+         * */
+        function.romanToInt("IV");
+
     }
 
     /**
@@ -36,6 +48,7 @@ public class Easy {
         }
         return null;
     }
+
     /**
      * 两数之和
      * 时间复杂度为O(n)
@@ -83,4 +96,36 @@ public class Easy {
         return true;
     }
 
+
+    /**
+     * 罗马数字转整数
+     * 时间复杂度O(n)
+     * */
+    public int romanToInt(String s) {
+        int count = 0;
+        int num = getNum(s.charAt(0));
+        for (int i = 1; i < s.length(); i++) {
+            int iNum = getNum(s.charAt(i));
+            if (num < iNum){
+                count = count-num;
+            }else {
+                count = count+num;
+            }
+            num = iNum;
+        }
+        count += num;
+        return count;
+    }
+    private int getNum(char s){
+        switch (s){
+            case 'I':return 1;
+            case 'V':return 5;
+            case 'X':return 10;
+            case 'L':return 50;
+            case 'C':return 100;
+            case 'D':return 500;
+            case 'M':return 1000;
+        }
+        return 0;
+    }
 }

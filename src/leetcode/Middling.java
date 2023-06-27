@@ -12,16 +12,17 @@ public class Middling {
     public static void main(String[] args) {
         Middling function = new Middling();
 
-        ListNode listNode1 = new ListNode(2,new ListNode(4,new ListNode(3)));
-        ListNode listNode2 = new ListNode(5,new ListNode(6,new ListNode(4)));
-
-        function.addTwoNumbers(listNode1,listNode2);
+        /**
+         * 两数相加
+         * */
+        //ListNode listNode1 = new ListNode(2,new ListNode(4,new ListNode(3)));
+        //ListNode listNode2 = new ListNode(5,new ListNode(6,new ListNode(4)));
+        //function.addTwoNumbers(listNode1,listNode2);
     }
 
     /**
-     *两数相加
+     * 两数相加
      * 时间复杂度O(n)
-     *
      * */
     public static class ListNode {
         int val;
