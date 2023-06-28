@@ -10,21 +10,25 @@ public class Easy {
 
     public static void main(String[] args) {
         Easy function = new Easy();
+
         /**
          * 两数之和
          * */
         //int[] nums = new int[]{3,2,4};
         //System.out.println(Arrays.toString(function.twoSum(nums,6)));
-
         /**
          * 回文数
          * */
-        //System.out.println(function.isPalindrome(120021));
-
+        //System.out.println(function.isPalindrome(120021))
         /**
          * 罗马数字转整数
          * */
-        function.romanToInt("IV");
+        //System.out.println(function.romanToInt("IV"));
+        /**
+         * 删除有序数组中的重复项
+         * */
+        //int[] nums = {1,1,2,3,3,4,5,5};
+        //System.out.println(function.removeDuplicates(nums));
 
     }
 
@@ -128,4 +132,20 @@ public class Easy {
         }
         return 0;
     }
+
+    /**
+     * 删除有序数组中的重复项
+     * 时间复杂度O(n)
+     * */
+    public int removeDuplicates(int[] nums) {
+        int a= 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[a] != nums[i]){
+                a++;
+                nums[a] = nums[i];
+            }
+        }
+        return a+1;
+    }
+
 }
