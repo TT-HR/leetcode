@@ -30,6 +30,8 @@ public class Easy {
         //int[] nums = {1,1,2,3,3,4,5,5};
         //System.out.println(function.removeDuplicates(nums));
 
+        int[] nums = {0,1,2,2,3,0,4,2};
+        function.removeElement(nums,2);
     }
 
     /**
@@ -148,4 +150,18 @@ public class Easy {
         return a+1;
     }
 
+    /**
+     * 移除元素
+     * */
+    //0,1,2,2,3,0,4,2
+    public int removeElement(int[] nums, int val) {
+        int j = 0;
+        for (int i = 0; i < nums.length;i++) {
+            if (nums[i] != val){
+                nums[i] = nums[j];
+                j++;
+            }
+        }
+        return j;
+    }
 }
