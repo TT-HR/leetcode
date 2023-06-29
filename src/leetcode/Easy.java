@@ -152,16 +152,16 @@ public class Easy {
 
     /**
      * 移除元素
+     * 时间复杂度O(n)
      * */
-    //0,1,2,2,3,0,4,2
     public int removeElement(int[] nums, int val) {
-        int j = 0;
-        for (int i = 0; i < nums.length;i++) {
-            if (nums[i] != val){
+        int i = 0;
+        for (int j = 0; j < nums.length;j++) {
+            if (nums[j] != val){
                 nums[i] = nums[j];
-                j++;
+                i++;
             }
         }
-        return j;
+        return i;
     }
 }
