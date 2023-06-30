@@ -30,8 +30,10 @@ public class Easy {
         //int[] nums = {1,1,2,3,3,4,5,5};
         //System.out.println(function.removeDuplicates(nums));
 
-        int[] nums = {0,1,2,2,3,0,4,2};
-        function.removeElement(nums,2);
+        //int[] nums = {0,1,2,2,3,0,4,2};
+        //function.removeElement(nums,2);
+        int[] nums = {1,3,5,6};
+        System.out.println(function.searchInsert1(nums,2));
     }
 
     /**
@@ -94,8 +96,6 @@ public class Easy {
             if (x % 10 != x / help) {
                 return false;
             }
-            System.out.println(x % help/10);
-            System.out.println(1/10);
             x = x % help / 10;
             help /= 100;
         }
@@ -163,5 +163,35 @@ public class Easy {
             }
         }
         return i;
+    }
+
+    /**
+     * 搜索插入位置
+     * O(n)
+     * */
+    public int searchInsert(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] >= target) return i;
+        }
+        return nums.length;
+    }
+    /**
+     * 搜索插入位置
+     * O(log n)
+     * */
+    public int searchInsert1(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length -1;
+        while (left <= right){
+            int min = (left+right)/2;
+            if (nums[min] == target){
+                return min;
+            }if (nums[min] < target){
+                left = min+1;
+            }else {
+                right = min-1;
+            }
+        }
+        return left;
     }
 }
