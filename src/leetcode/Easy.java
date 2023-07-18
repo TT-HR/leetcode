@@ -32,8 +32,10 @@ public class Easy {
 
         //int[] nums = {0,1,2,2,3,0,4,2};
         //function.removeElement(nums,2);
-        int[] nums = {1,3,5,6};
-        System.out.println(function.searchInsert1(nums,2));
+        //int[] nums = {1,3,5,6};
+        //System.out.println(function.searchInsert1(nums,2));
+        int[] nums = {9,9,9,9};
+        System.out.println(function.plusOne(nums));
     }
 
     /**
@@ -193,5 +195,23 @@ public class Easy {
             }
         }
         return left;
+    }
+
+    /**
+     * 加一
+     * */
+    public int[] plusOne(int[] digits) {
+        for (int i = digits.length-1; i >= 0 ; i--) {
+            if (digits[i] == 9) {
+                digits[i]=0;
+            }else {
+                digits[i]++;
+                return digits;
+            }
+
+        }
+        int[] newDig = new int[digits.length+1];
+        newDig[0] = 1;
+        return newDig;
     }
 }
